@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./jquery-3.7.1.js"></script> -->
+    <script src = "https://ajax.aspnetCDN.com/ajax/jQuery/jQuery-3.3.1.min.js"></script>
+    
+</head>
+<body>
+    <button>Click me</button>
+    <div></div>
+    <script>
+        
+                $('button').click(function(){
+                    $('div').load("https://jsonplaceholder.typicode.com/albums",function(responseTxt, statusTxt, xhr){
+                        if(statusTxt=="success")
+                        alert("External content loaded successfully");
+                        if(statusTxt=="error")
+                        alert("Error: " +xhr.status+ ": " +xhr.statusText);
+                    
+                    }); 
+                });
+
+    </script>
+
+</body>
+</html>
